@@ -50,6 +50,12 @@ module Spree
           matching_customizations(li.product_customizations,product_customizations)
       end
     end
+                                                                                                  def merge!(order)
+      order.line_items.each do |line_item|
+        self.add_variant(line_item.variant, line_item.quantity, line_item.ad_hoc_option_value_ids, line_item.product_customizations)
+      end
+      order.destroy
+    end
 
     private
 
