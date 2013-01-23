@@ -1,7 +1,7 @@
 // overrides spree core's version to include our variant configurations
 $(document).ready(function(){
 
-  $("#add_line_item_to_order").live("click", function(){
+  $("#add_line_item_to_order").on("click", function(){
     if($('#add_variant_id').val() == ''){ return false; }
     update_target = $(this).attr("data-update");
     $.ajax({ dataType: 'script', url: this.href, type: "POST",
@@ -13,7 +13,10 @@ $(document).ready(function(){
     return false;
   });
 
-  $("#add_product_name").product_autocomplete();
+  $(".variant_autocomplete").variantAutocomplete();
+  $(".variant_autocomplete").on("change", function(event){
+    $.getScript(Spree.routes.variant_configurations + '/' + event.val);
+  });
 
 });
 
