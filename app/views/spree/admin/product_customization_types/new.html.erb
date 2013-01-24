@@ -6,17 +6,11 @@
   <fieldset>
     <legend><%= t("new_product_customization_type") %></legend>
     <%= render :partial => "form", :locals => { :f => f } %>
-<!--     < %= render :partial => 'spree/admin/shared/new_resource_links' % >
 
-put this back in once r_c is removed
--->
-
-
-<p class="form-buttons">
-  <%= button t("actions.create") %>
-  <%= t("or") %> <%= link_to t("actions.cancel"), admin_product_customization_types_url %>
-</p>
-
-
+    <div class="form-buttons filter-actions actions">
+      <%= button t("actions.create"), 'icon-ok' %>
+      <span class='or'><%= t("or") %></span>
+      <%= button_link_to t("actions.cancel"), admin_product_customization_types_url, :icon => 'icon-remove' %>
+    </div>
   </fieldset>
 <% end %>
