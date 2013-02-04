@@ -35,7 +35,7 @@ Spree::Core::Engine.routes.prepend do
 
     resources :ad_hoc_variant_exclusions
 
-    resources :products do
+    namespace :products do
       resources :option_types do
         member do
           get :select
