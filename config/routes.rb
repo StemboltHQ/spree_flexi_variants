@@ -1,4 +1,4 @@
-Spree::Core::Engine.routes.prepend do
+Spree::Core::Engine.routes.append do
   match 'product_customizations/price', :to => 'product_customizations#price'
 
   match 'customize/:product_id', :to => 'products#customize', :as => 'customize'
@@ -35,7 +35,7 @@ Spree::Core::Engine.routes.prepend do
 
     resources :ad_hoc_variant_exclusions
 
-    namespace :products do
+    resources :products do
       resources :option_types do
         member do
           get :select
