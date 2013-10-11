@@ -14,6 +14,9 @@ $(document).ready(function(){
     return false;
   });
 
-  $(".product_autocomplete").product_autocomplete();
+  $(".variant_autocomplete").variantAutocomplete();
+  $(".variant_autocomplete").on("change", function(event){
+    $.getScript(Spree.routes.variant_configurations + '/' + event.val);
+  });
 
 });

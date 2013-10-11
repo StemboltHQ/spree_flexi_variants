@@ -77,5 +77,5 @@ Spree::Core::Engine.routes.prepend do
 
   end # namespace :admin
 
-  match 'admin/variant_configurations/:variant_id', :to => 'admin/variant_configurations#configure'
+  match 'admin/variant_configurations(/:variant_id)', :to => 'admin/variant_configurations#configure', :as => :admin_variant_configurations
 end
