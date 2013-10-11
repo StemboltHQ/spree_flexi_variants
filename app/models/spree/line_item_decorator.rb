@@ -34,7 +34,7 @@ module Spree
     end
 
     def cost_price
-      variant.cost_price + ad_hoc_option_values.map(&:cost_price).inject(0, :+)
+      variant.cost_price + ad_hoc_option_values.map(&:cost_price).inject(0, :+) if variant.cost_price
     end
 
     def cost_money
