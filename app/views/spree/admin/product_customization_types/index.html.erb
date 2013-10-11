@@ -16,7 +16,7 @@
       <th><%= Spree.t("name") %></th>
       <th><%= Spree.t("presentation") %></th>
       <th><%= Spree.t("description") %></th>
-      <th></th>
+      <th class="actions"></th>
     </tr>
   </thead>
   <tbody>
@@ -26,9 +26,8 @@
         <td class='presentation'><%= product_customization_type.presentation %></td>
         <td class='description'><%= product_customization_type.description %></td>
         <td class="actions">
-          <%= link_to_edit(product_customization_type, :class => 'admin_edit_product_customization_type') %>
-          &nbsp;
-          <%= link_to_delete(product_customization_type) %>
+          <%= link_to_edit(product_customization_type, :no_text => true) %>
+          <%= link_to_delete(product_customization_type, :no_text => true) %>
         </td>
       </tr>
     <% end %>

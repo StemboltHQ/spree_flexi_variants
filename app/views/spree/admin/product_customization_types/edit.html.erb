@@ -20,7 +20,7 @@
         <th><%= Spree.t("name") %></th>
         <th><%= Spree.t("presentation") %></th>
         <th><%= Spree.t("description") %></th>
-        <th></th>
+        <th class='actions'></th>
       </tr>
     </thead>
     <tbody id="customizable_product_options">
@@ -40,6 +40,5 @@
   <%= Spree.t("or") %> <%= link_to Spree.t("cancel"), admin_product_customization_types_url %>
 </p>
 
-<!--   < %= # render :partial => 'admin/shared/edit_resource_links' % > -->
 </fieldset>
 <% end %>
